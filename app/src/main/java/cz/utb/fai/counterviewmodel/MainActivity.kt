@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         // update the UI immediately
         updateCounterUI()
