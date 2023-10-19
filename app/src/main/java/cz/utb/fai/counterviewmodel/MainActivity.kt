@@ -19,27 +19,5 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        // update the UI immediately
-        updateCounterUI()
-
-        // btnSave click event handler
-        binding.btnSave.setOnClickListener {
-            // get the user input from editTextName
-            viewModel.name = binding.editTextName.text.toString()
-            viewModel.email = binding.editTextEmail.text.toString()
-            // set the input into textName text field
-            binding.textName.text = viewModel.name
-        }
-
-        // btnIncrement click event handler, will increment the counter and show it
-        binding.btnIncrement.setOnClickListener {
-            viewModel.increment()
-            updateCounterUI()
-        }
-    }
-
-    fun updateCounterUI(){
-        binding.textName.text = viewModel.name
-        binding.textCounter.text = viewModel.counter.toString()
     }
 }
